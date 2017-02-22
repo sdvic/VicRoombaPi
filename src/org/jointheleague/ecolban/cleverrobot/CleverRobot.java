@@ -22,7 +22,7 @@ public class CleverRobot extends IRobotAdapter {
 	private void getGoing() {
 		Sonar sonar = new Sonar();
 		for (int i = 0; i < 100000; i++) {
-			System.out.println("+" + sonar.readSonar());
+			System.out.println("+" + sonar.readSonarLeft());
 			try {
 				Thread.sleep(20);
 			} catch (InterruptedException e) {

@@ -14,13 +14,13 @@ public class Sonar
 	private long startTime;
 	private long stopTime;
 	final GpioController gpio = GpioFactory.getInstance();
-	private GpioPinDigitalOutput strobe = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_00);// Strobe...pin 11
-	private GpioPinInput echo = gpio.provisionDigitalInputPin(RaspiPin.GPIO_03); // Echo...pin 15
+	private GpioPinDigitalOutput strobeLeft = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_00);// Strobe...pin 11
+	private GpioPinInput echoLeft = gpio.provisionDigitalInputPin(RaspiPin.GPIO_03); // Echo...pin 15
 	private int filteredDistance;
 
 	public Sonar()
 	{
-		echo.addListener(new GpioPinListenerDigital()
+		echoLeft.addListener(new GpioPinListenerDigital()
 		{
 			@Override
 			public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event)
@@ -42,10 +42,10 @@ public class Sonar
 		});
 	}
 
-	public int readSonar()
+	public int readSonarLeft()
 	{
-		strobe.high();
-		strobe.low();
+		strobeLeft.high();
+		strobeLeft.low();
 		return filteredDistance;
 	}
 }
