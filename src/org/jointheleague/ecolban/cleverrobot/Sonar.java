@@ -16,6 +16,10 @@ public class Sonar
 	final GpioController gpio = GpioFactory.getInstance();
 	private GpioPinDigitalOutput strobeLeft = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_00);// Strobe...pin 11
 	private GpioPinInput echoLeft = gpio.provisionDigitalInputPin(RaspiPin.GPIO_03); // Echo...pin 15
+	private GpioPinDigitalOutput strobeRight = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01);// Strobe...pin 12
+	private GpioPinInput echoRight = gpio.provisionDigitalInputPin(RaspiPin.GPIO_04); // Echo...pin 16
+	private GpioPinDigitalOutput strobeCenter = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_02);// Strobe...pin 13
+	private GpioPinInput echoCenter = gpio.provisionDigitalInputPin(RaspiPin.GPIO_05); // Echo...pin 18
 	private int filteredDistance;
 
 	public Sonar()
@@ -43,6 +47,18 @@ public class Sonar
 	}
 
 	public int readSonarLeft()
+	{
+		strobeLeft.high();
+		strobeLeft.low();
+		return filteredDistance;
+	}
+	public int readSonarRight()
+	{
+		strobeLeft.high();
+		strobeLeft.low();
+		return filteredDistance;
+	}
+	public int readSonarCenter()
 	{
 		strobeLeft.high();
 		strobeLeft.low();
