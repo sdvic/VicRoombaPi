@@ -1,5 +1,8 @@
 package org.jointheleague.ecolban.cleverrobot;
-
+/*********************************************************************************************
+ * Vic's ultrasonic sensor running with Erik's Clever Robot for Pi
+ * version 0.9, 170227
+ **********************************************************************************************/
 import java.io.IOException;
 
 import org.jointheleague.ecolban.rpirobot.IRobotAdapter;

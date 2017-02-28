@@ -1,5 +1,8 @@
 package org.jointheleague.ecolban.cleverrobot;
-
+/*********************************************************************************************
+ * Vic's ultrasonic sensor running with Erik's Clever Robot for Pi
+ * version 0.9, 170227
+ **********************************************************************************************/
 import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
 import com.pi4j.io.gpio.GpioPinDigitalOutput;
